@@ -1,12 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { getFunName } from '../helpers';
 
 // State is an object that lives inside a component
 // it stores data that the component and/or its children may need
 
 class StorePicker extends React.Component {
-// GOLDEN RULE: Don't touch the DOM!
+    // GOLDEN RULE: Don't touch the DOM!
     myInput = React.createRef();
+
+    static propTypes = {
+        history: PropTypes.object
+    };
 
     goToStore = (event) => {
         // 1. Stop the form from submitting
